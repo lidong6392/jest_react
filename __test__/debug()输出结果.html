@@ -1,0 +1,178 @@
+<userManage>
+    <div className="page page-scrollfix page-usermanage page-modulemanage">
+      <Layout>
+        <BasicLayout prefixCls="ant-layout" tagName="section">
+          <section className="ant-layout">
+            <Layout className="page-body">
+              <BasicLayout prefixCls="ant-layout" tagName="section" className="page-body">
+                <section className="page-body ant-layout">
+                  <Content>
+                    <Basic prefixCls="ant-layout-content" tagName="main">
+                      <main className="ant-layout-content">
+                        <div className="page-content">
+                          <ModuleList dataSource={{...}} loading={true} onDelete={[Function: bound handleDelete]} onModify={[Function: bound handleModify]} onUpdataStatus={[Function: bound handleChangeStatus]} onAddNode={[Function: bound handleAddNode]} buttonList={[Function: bound buttonList]}>
+                            <div className="table-scrollfix">
+                              <withStore(Table) columns={{...}} dataSource={{...}} loading={true} scroll={{...}} pagination={false} bordered={true} rowKey="id">
+                                <Table columns={{...}} dataSource={{...}} loading={true} scroll={{...}} pagination={false} bordered={true} rowKey="id" store={{...}} checkboxPropsCache={{...}} setCheckboxPropsCache={[Function (anonymous)]} useFixedHeader={false} className="" size="default" indentSize={20} locale={{...}} showHeader={true} sortDirections={{...}} childrenColumnName="children">
+                                  <div className="ant-table-wrapper" style={[undefined]}>
+                                    <Spin spinning={true} className="ant-table-without-pagination ant-table-spin-holder" size="default" wrapperClassName="">
+                                      <div className="ant-spin-nested-loading">
+                                        <div>
+                                          <div style={[undefined]} className="ant-spin ant-spin-spinning ant-table-without-pagination ant-table-spin-holder">
+                                            <span className="ant-spin-dot ant-spin-dot-spin">
+                                              <i className="ant-spin-dot-item" />
+                                              <i className="ant-spin-dot-item" />
+                                              <i className="ant-spin-dot-item" />
+                                              <i className="ant-spin-dot-item" />
+                                            </span>
+                                          </div>
+                                        </div>
+                                        <div className="ant-spin-container ant-spin-blur">
+                                          <LocaleReceiver componentName="Table" defaultLocale={{...}}>
+                                            <Table expandIcon={[Function (anonymous)]} columns={{...}} dataSource={{...}} loading={true} scroll={{...}} pagination={false} bordered={true} rowKey="id" store={{...}} checkboxPropsCache={{...}} setCheckboxPropsCache={[Function (anonymous)]} useFixedHeader={false} className="ant-table-default ant-table-bordered ant-table-empty" size="default" indentSize={20} sortDirections={{...}} childrenColumnName="children" onRow={[Function: onRow]} components={{...}} prefixCls="ant-table" data={{...}} showHeader={true} expandIconColumnIndex={0} expandIconAsCell={[undefined]} emptyText={{...}} rowClassName={[Function: rowClassName]} onHeaderRow={[Function: onHeaderRow]} bodyStyle={{...}} style={{...}} rowRef={[Function: rowRef]}>
+                                              <Provider store={{...}}>
+                                                <Connect(ExpandableTable) expandIcon={[Function (anonymous)]} columns={{...}} dataSource={{...}} loading={true} scroll={{...}} pagination={false} bordered={true} rowKey="id" store={{...}} checkboxPropsCache={{...}} setCheckboxPropsCache={[Function (anonymous)]} useFixedHeader={false} className="ant-table-default ant-table-bordered ant-table-empty" size="default" indentSize={20} sortDirections={{...}} childrenColumnName="children" onRow={[Function: onRow]} components={{...}} prefixCls="ant-table" data={{...}} showHeader={true} expandIconColumnIndex={0} expandIconAsCell={[undefined]} emptyText={{...}} rowClassName={[Function: rowClassName]} onHeaderRow={[Function: onHeaderRow]} bodyStyle={{...}} style={{...}} rowRef={[Function: rowRef]} columnManager={{...}} getRowKey={[Function (anonymous)]}>
+                                                  <ExpandableTable expandIcon={[Function (anonymous)]} columns={{...}} dataSource={{...}} loading={true} scroll={{...}} pagination={false} bordered={true} rowKey="id" store={{...}} checkboxPropsCache={{...}} setCheckboxPropsCache={[Function (anonymous)]} useFixedHeader={false} className="ant-table-default ant-table-bordered ant-table-empty" size="default" indentSize={20} sortDirections={{...}} childrenColumnName="children" onRow={[Function: onRow]} components={{...}} prefixCls="ant-table" data={{...}} showHeader={true} expandIconColumnIndex={0} expandIconAsCell={false} emptyText={{...}} rowClassName={[Function: rowClassName]} onHeaderRow={[Function: onHeaderRow]} bodyStyle={{...}} style={{...}} rowRef={[Function: rowRef]} columnManager={{...}} getRowKey={[Function (anonymous)]} expandedRowClassName={[Function: expandedRowClassName]} defaultExpandAllRows={false} defaultExpandedRowKeys={{...}} onExpand={[Function: onExpand]} onExpandedRowsChange={[Function: onExpandedRowsChange]}>
+                                                    <div className="ant-table ant-table-default ant-table-bordered ant-table-empty ant-table-fixed-header ant-table-scroll-position-left ant-table-layout-fixed" style={{...}} id={[undefined]}>
+                                                      <div className="ant-table-content">
+                                                        <div className="ant-table-scroll">
+                                                          <HeadTable columns={{...}} fixed={[undefined]} tableClassName="" handleBodyScrollLeft={[Function (anonymous)]} expander={{...}}>
+                                                            <div className="ant-table-header" style={{...}} onScroll={[Function (anonymous)]}>
+                                                              <Connect(BaseTable) tableClassName="" hasHead={true} hasBody={false} fixed={[undefined]} columns={{...}} expander={{...}}>
+                                                                <BaseTable tableClassName="" hasHead={true} hasBody={false} fixed={[undefined]} columns={{...}} expander={{...}} store={{...}}>
+                                                                  <table className="" style={{...}}>
+                                                                    <ColGroup columns={{...}} fixed={[undefined]}>
+                                                                      <colgroup>
+                                                                        <col style={{...}} />
+                                                                        <col style={{...}} />
+                                                                        <col style={{...}} />
+                                                                      </colgroup>
+                                                                    </ColGroup>
+                                                                    <TableHeader expander={{...}} columns={{...}} fixed={[undefined]}>
+                                                                      <thead className="ant-table-thead">
+                                                                        <Connect(TableHeaderRow) prefixCls="ant-table" index={0} fixed={[undefined]} columns={{...}} rows={{...}} row={{...}} components={{...}} onHeaderRow={[Function: onHeaderRow]}>
+                                                                          <TableHeaderRow prefixCls="ant-table" index={0} fixed={[undefined]} columns={{...}} rows={{...}} row={{...}} components={{...}} onHeaderRow={[Function: onHeaderRow]} height={{...}} store={{...}}>
+                                                                            <tr style={{...}}>
+                                                                              <th className="ant-table-row-cell-break-word">
+                                                                                <span className="ant-table-header-column">
+                                                                                  <div className={[undefined]}>
+                                                                                    <span className="ant-table-column-title">
+                                                                                      功能
+                                                                                    </span>
+                                                                                    <span className="ant-table-column-sorter" />
+                                                                                  </div>
+                                                                                </span>
+                                                                              </th>
+                                                                              <th className="ant-table-row-cell-break-word">
+                                                                                <span className="ant-table-header-column">
+                                                                                  <div className={[undefined]}>
+                                                                                    <span className="ant-table-column-title">
+                                                                                      操作
+                                                                                    </span>
+                                                                                    <span className="ant-table-column-sorter" />
+                                                                                  </div>
+                                                                                </span>
+                                                                              </th>
+                                                                              <th className="ant-table-row-cell-break-word ant-table-row-cell-last">
+                                                                                <span className="ant-table-header-column">
+                                                                                  <div className={[undefined]}>
+                                                                                    <span className="ant-table-column-title">
+                                                                                      状态
+                                                                                    </span>
+                                                                                    <span className="ant-table-column-sorter" />
+                                                                                  </div>
+                                                                                </span>
+                                                                              </th>
+                                                                            </tr>
+                                                                          </TableHeaderRow>
+                                                                        </Connect(TableHeaderRow)>
+                                                                      </thead>
+                                                                    </TableHeader>
+                                                                  </table>
+                                                                </BaseTable>
+                                                              </Connect(BaseTable)>
+                                                            </div>
+                                                          </HeadTable>
+                                                          <BodyTable columns={{...}} fixed={[undefined]} tableClassName="" getRowKey={[Function (anonymous)]} handleWheel={[Function (anonymous)]} handleBodyScroll={[Function (anonymous)]} expander={{...}} isAnyColumnsFixed={false}>
+                                                            <div tabIndex={-1} className="ant-table-body" style={{...}} onWheel={[Function (anonymous)]} onScroll={[Function (anonymous)]}>
+                                                              <Connect(BaseTable) tableClassName="" hasHead={false} hasBody={true} fixed={[undefined]} columns={{...}} expander={{...}} getRowKey={[Function (anonymous)]} isAnyColumnsFixed={false}>
+                                                                <BaseTable tableClassName="" hasHead={false} hasBody={true} fixed={[undefined]} columns={{...}} expander={{...}} getRowKey={[Function (anonymous)]} isAnyColumnsFixed={false} store={{...}}>
+                                                                  <table className="" style={{...}}>
+                                                                    <ColGroup columns={{...}} fixed={[undefined]}>
+                                                                      <colgroup>
+                                                                        <col style={{...}} />
+                                                                        <col style={{...}} />
+                                                                        <col style={{...}} />
+                                                                      </colgroup>
+                                                                    </ColGroup>
+                                                                    <tbody className="ant-table-tbody" />
+                                                                  </table>
+                                                                </BaseTable>
+                                                              </Connect(BaseTable)>
+                                                            </div>
+                                                          </BodyTable>
+                                                          <div className="ant-table-placeholder">
+                                                            <Empty image={{...}}>
+                                                              <LocaleReceiver componentName="Empty">
+                                                                <div className="ant-empty ant-empty-normal">
+                                                                  <div className="ant-empty-image" style={[undefined]}>
+                                                                    <Simple>
+                                                                      <svg width="64" height="41" viewBox="0 0 64 41" xmlns="http://www.w3.org/2000/svg">
+                                                                        <g transform="translate(0 1)" fill="none" fillRule="evenodd">
+                                                                          <ellipse fill="#F5F5F5" cx="32" cy="33" rx="32" ry="7" />
+                                                                          <g fillRule="nonzero" stroke="#D9D9D9">
+                                                                            <path d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z" />
+                                                                            <path d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z" fill="#FAFAFA" />
+                                                                          </g>
+                                                                        </g>
+                                                                      </svg>
+                                                                    </Simple>
+                                                                  </div>
+                                                                  <p className="ant-empty-description">
+                                                                    No Data
+                                                                  </p>
+                                                                </div>
+                                                              </LocaleReceiver>
+                                                            </Empty>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </ExpandableTable>
+                                                </Connect(ExpandableTable)>
+                                              </Provider>
+                                            </Table>
+                                          </LocaleReceiver>
+                                        </div>
+                                      </div>
+                                    </Spin>
+                                  </div>
+                                </Table>
+                              </withStore(Table)>
+                            </div>
+                          </ModuleList>
+                        </div>
+                        <div className="page-footer">
+                          <div className="page-footer-buttons">
+                            <Button type="primary" onClick={[Function: bound moduleAdd]} loading={false} ghost={false} block={false} htmlType="button">
+                              <Wave>
+                                <button onClick={[Function (anonymous)]} type="button" className="ant-btn ant-btn-primary">
+                                  <span>
+                                     新增模块
+                                  </span>
+                                </button>
+                              </Wave>
+                            </Button>
+                          </div>
+                        </div>
+                      </main>
+                    </Basic>
+                  </Content>
+                </section>
+              </BasicLayout>
+            </Layout>
+          </section>
+        </BasicLayout>
+      </Layout>
+    </div>
+  </userManage>
