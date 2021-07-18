@@ -1,4 +1,4 @@
-const fetchUserDepttList = require('./fetchUserDepttList')
+const fetchUserDeptList = require('./fetchUserDeptList')
 const fetchRoleList = require('./fetchRoleList')
 const fetchUserList = require('./fetchUserList')
 const fetchUserDetail = require('./fetchUserDetail')
@@ -11,7 +11,7 @@ const synUser = require('../../success')
 
 
 module.exports = {
-  fetchUserDepttList,
+  fetchUserDeptList,
   fetchRoleList,
   fetchUserList,
   fetchUserDetail,

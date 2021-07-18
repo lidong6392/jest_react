@@ -20,7 +20,7 @@ module.exports = {
 
   // #region 用户管理
   [`${path}/usercenter/role/list`]: userManage.fetchRoleList, // 角色列表
-  [`${path}/usercenter/dept/list`]: userManage.fetchUserDepttList, // 部门列表
+  [`${path}/usercenter/dept/list`]: userManage.fetchUserDeptList, // 部门列表
   [`${path}/usercenter/user/list`]: userManage.fetchUserList, // 用户列表
   [`${path}/usercenter/user/detail`]: userManage.fetchUserDetail, // 获取用户详情
   [`${path}/usercenter/user/update`]: userManage.fetchUserDetailUpdate, // 修改用户详情

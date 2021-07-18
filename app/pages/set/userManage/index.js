@@ -12,24 +12,20 @@ import {
 import TableList from '@tableList';
 import { synUser } from '@apis/common';
 import {
-  fetchUserDepttList,
+  fetchUserDeptList,
   fetchUserList,
   fetchUserDetail,
-  fetchUserDelete,
   fetchRoleList,
   fetchChangeUserStatus,
 } from '@apis/manage';
 import TreeList from './treeList';
 import AddPolice from './modal/addPolice';
-import SelectRole from './modal/selectRole';
 
 const FormItem = Form.Item;
 const { Content, Sider } = Layout;
-const { fetchBtns } = require('@configs/common');
-
 @Form.create({})
 // 声明组件  并对外输出
-export default class app extends Component {
+export default class UserManage extends Component {
   // 初始化页面常量 绑定事件方法
   constructor(props) {
     super(props);
@@ -38,7 +34,6 @@ export default class app extends Component {
       searchtitle: '',
       PoliceAddVisible: false,
       synchronizeLoading: false,
-      RoleVisible: false,
       spinloading: true,
       moduletitle: '',
       moduletype: '',
@@ -70,7 +65,9 @@ export default class app extends Component {
     fetchRoleList({}, (res) => {
       this.setState({ userRoleSetResult: res.data });
     });
-    fetchUserDepttList({}, (res) => {
+    console.log('fetchUserDeptList >>> 111')
+    fetchUserDeptList({}, (res) => {
+      console.log('fetchUserDeptList >>> 222', res)
       if (res.data.list.length > 0) {
         this.setState(
           {
@@ -101,16 +98,11 @@ export default class app extends Component {
     this.props.form.setFieldsValue({ key: '' });
   }
 
-  // #region 收缩业务代码功能
-
-  // 发送获取当前菜单的按钮权限
-  // getBtnRights() {
-  //   fetchBtns(this, btnRights => this.setState({ btnRights }));
-  // }
-
   // 获取用户列表数据
   getData(callback) {
+    console.log('fetchUserList +++ 111')
     fetchUserList({ ...this.state.searchKey }, (res) => {
+      console.log('fetchUserList +++ 222', res)
       this.setState({
         userListResult: res.data,
       });
@@ -523,16 +515,6 @@ export default class app extends Component {
             roleList={userRoleSetResult.list || []}
           />
         ) : null}
-        {/* {this.state.RoleVisible ? (
-          <SelectRole
-            visible={this.state.RoleVisible}
-            handleOkRole={() => this.handleOkRole()}
-            values={userDetailResult}
-            currPeopleId={this.state.currPeopleId}
-            select={userRoleSetResult.list}
-            onCancel={() => this.handleCancelRole()}
-          />
-        ) : null} */}
       </div>
     );
   }
