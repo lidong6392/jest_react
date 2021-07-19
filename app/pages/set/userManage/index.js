@@ -65,9 +65,7 @@ export default class UserManage extends Component {
     fetchRoleList({}, (res) => {
       this.setState({ userRoleSetResult: res.data });
     });
-    console.log('fetchUserDeptList >>> 111')
     fetchUserDeptList({}, (res) => {
-      console.log('fetchUserDeptList >>> 222', res)
       if (res.data.list.length > 0) {
         this.setState(
           {
@@ -100,9 +98,7 @@ export default class UserManage extends Component {
 
   // 获取用户列表数据
   getData(callback) {
-    console.log('fetchUserList +++ 111')
     fetchUserList({ ...this.state.searchKey }, (res) => {
-      console.log('fetchUserList +++ 222', res)
       this.setState({
         userListResult: res.data,
       });
@@ -179,6 +175,7 @@ export default class UserManage extends Component {
   handleSearch = (e) => {
     e.preventDefault();
     const keyword = this.props.form.getFieldValue('key');
+    console.log('handleSearch >>>', keyword)
     this.setState(
       {
         spinloading: true,
