@@ -82,6 +82,7 @@ export default class app extends Component {
 
     return (
       <div className="RichEditor-root">
+        <h1>编辑器</h1>
         <BlockStyleControls
           editorState={editorState}
           onToggle={this.toggleBlockType}

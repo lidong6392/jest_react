@@ -243,6 +243,7 @@ export default class userManage extends Component {
     const thevalue = this.state.type === 'modify' ? moduleDetailResult : this.state.values
     return (
       <div className="page page-scrollfix page-usermanage page-modulemanage">
+        <h1>权限管理</h1>
         <Layout>
           <Layout className="page-body">
             <Content>

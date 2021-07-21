@@ -243,3 +243,11 @@ export const fetchRoleList = (params, callback) => Promise.resolve({
 }).then((data) => {
   callback(data)
 })
+
+export const fetchTreeList = (params, callback) => Promise.resolve({
+  data: {},
+})
+
+export const fetchModuleList = (params, callback) => Promise.resolve({
+  data: {},
+})

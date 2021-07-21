@@ -62,7 +62,7 @@ export default class app extends Component {
       tabsloading: false,
       tableLoading: false,
       treeloading: false,
-      searchKey: {
+      condition: {
         roleName: '',
       },
       peopleSearchKey: {
@@ -126,7 +126,7 @@ export default class app extends Component {
         spinloading: true,
       },
       () => {
-        fetchRoleList({ ...this.state.searchKey }, (result) => {
+        fetchRoleList({ ...this.state.condition }, (result) => {
           this.setState(
             {
               spinloading: false,
@@ -320,7 +320,7 @@ export default class app extends Component {
   handleRoleSearch(value) {
     this.setState(
       {
-        searchKey: {
+        condition: {
           roleName: value,
         },
       },
@@ -558,6 +558,7 @@ export default class app extends Component {
     const { btnRights } = this.state;
     return (
       <div className="page page-scrollfix page-usermanage page-rolemanage">
+        <h1>角色管理</h1>
         <Layout>
           <Layout className="page-body">
             <Sider

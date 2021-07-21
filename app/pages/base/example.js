@@ -34,7 +34,7 @@ export default class app extends Component {
   render() {
     return (
       <div className="page">
-        示范页面
+        <h1>概览</h1>
         <div>
           <Button onClick={this.onClickSend}>发送</Button>
         </div>

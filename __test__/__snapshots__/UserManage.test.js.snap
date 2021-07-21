@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`测试组件交互行为是否正常 全部操作执行完成对组件的state进行快照测试 1`] = `
+Object {
+  "PoliceAddVisible": false,
+  "btnRights": Object {
+    "add": true,
+    "delete": true,
+    "edit": true,
+    "freeze": true,
+    "view": true,
+  },
+  "condition": Object {
+    "deptCode": "370202150000",
+    "keyword": "",
+    "pageNo": 1,
+    "pageSize": 10,
+  },
+  "currPeopleId": "",
+  "moduletitle": "",
+  "moduletype": "",
+  "searchtitle": "文二路",
+  "spinloading": false,
+  "synchronizeLoading": false,
+  "userDeptResult": Object {
+    "list": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "deptCode": "370202140000",
+                "deptName": "文一路",
+                "id": "10541",
+                "parentCode": "370202000000",
+              },
+              Object {
+                "deptCode": "370202150000",
+                "deptName": "文二路",
+                "id": "10401",
+                "parentCode": "370202000000",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "deptCode": "370202230001",
+                    "deptName": "文三路",
+                    "id": "10628",
+                    "parentCode": "370202230000",
+                  },
+                  Object {
+                    "deptCode": "370202230002",
+                    "deptName": "文晖路",
+                    "id": "10629",
+                    "parentCode": "370202230000",
+                  },
+                ],
+                "deptCode": "370202230000",
+                "deptName": "古翠路",
+                "id": "10398",
+                "parentCode": "370202000000",
+              },
+              Object {
+                "deptCode": "370202240000",
+                "deptName": "丰潭路",
+                "id": "10537",
+                "parentCode": "370202000000",
+              },
+            ],
+            "deptCode": "370202000000",
+            "deptName": "下城区",
+            "id": "10416",
+            "parentCode": "370200000000",
+          },
+        ],
+        "deptCode": "370200000000",
+        "deptName": "杭州市",
+        "id": "1",
+      },
+    ],
+  },
+  "userDetailResult": Object {
+    "list": Array [],
+    "loading": false,
+  },
+  "userListResult": Object {
+    "list": Array [
+      Object {
+        "chineseName": "销售部1",
+        "deptCode": "370200000000",
+        "gxdwdm": "370200000000",
+        "id": 10240,
+        "idcardNo": "332527198010230505",
+        "password": "123456",
+        "phoneNo": "18969784568",
+        "roles": Array [
+          Object {
+            "id": 10100,
+            "resources": Array [],
+            "roleName": "演示账号1",
+          },
+        ],
+        "status": 0,
+        "username": "tgramxs",
+      },
+      Object {
+        "chineseName": "市局",
+        "deptCode": "370200000000",
+        "gxdwdm": "370200000000",
+        "id": 10198,
+        "idcardNo": "412722196302151222",
+        "password": "888888",
+        "phoneNo": "15236985623",
+        "roles": Array [
+          Object {
+            "id": 1,
+            "resources": Array [],
+            "roleName": "超级管理员",
+          },
+        ],
+        "status": 1,
+        "username": "qingdaosj",
+      },
+      Object {
+        "chineseName": "测试sj",
+        "deptCode": "370200000000",
+        "gxdwdm": "370200000000",
+        "id": 10184,
+        "idcardNo": "332623196801254521",
+        "password": "888888",
+        "phoneNo": "15821456854",
+        "roles": Array [
+          Object {
+            "id": 1,
+            "resources": Array [],
+            "roleName": "超级管理员",
+          },
+        ],
+        "status": 1,
+        "type": 0,
+        "username": "sjsjsj",
+      },
+      Object {
+        "chineseName": "sj-admin",
+        "deptCode": "370200000000",
+        "gxdwdm": "370200000000",
+        "id": 10180,
+        "idcardNo": "612527199310150000",
+        "password": "888888",
+        "phoneNo": "15522223333",
+        "roles": Array [
+          Object {
+            "id": 1,
+            "resources": Array [],
+            "roleName": "超级管理员",
+          },
+        ],
+        "status": 0,
+        "type": 0,
+        "username": "sj666",
+      },
+      Object {
+        "chineseName": "zhlsj1",
+        "deptCode": "370200000000",
+        "gxdwdm": "370200000000",
+        "id": 10178,
+        "idcardNo": "330881187609090044",
+        "password": "888888",
+        "phoneNo": "13200000000",
+        "roles": Array [
+          Object {
+            "id": 1,
+            "resources": Array [],
+            "roleName": "超级管理员",
+          },
+        ],
+        "status": 0,
+        "type": 0,
+        "username": "zhlsj1",
+      },
+      Object {
+        "chineseName": "zhlsj",
+        "deptCode": "370200000000",
+        "gxdwdm": "370200000000",
+        "id": 10177,
+        "idcardNo": "330881187609090033",
+        "password": "888888",
+        "phoneNo": "15600000000",
+        "roles": Array [
+          Object {
+            "id": 1,
+            "resources": Array [],
+            "roleName": "超级管理员",
+          },
+        ],
+        "status": 0,
+        "type": 0,
+        "username": "zhlsj",
+      },
+      Object {
+        "chineseName": "管理员",
+        "deptCode": "370200000000",
+        "email": "abc@abc.com",
+        "gender": 1,
+        "gxdwdm": "370200000000",
+        "id": 2,
+        "idcardNo": "000000000000000001",
+        "password": "111111",
+        "phoneNo": "15100000000",
+        "policeCode": "000000",
+        "status": 0,
+        "type": 0,
+        "username": "111111",
+      },
+    ],
+    "pageNo": 1,
+    "pageSize": 10,
+    "totalCount": 10,
+    "totalPage": 1,
+  },
+  "userRoleSetResult": Object {
+    "list": Array [
+      Object {
+        "id": 1,
+        "resources": Array [],
+        "roleName": "超级管理员",
+        "sort": 0,
+        "type": 0,
+      },
+      Object {
+        "id": 10080,
+        "resources": Array [],
+        "roleName": "开发账号",
+        "sort": 2,
+      },
+      Object {
+        "id": 10060,
+        "resources": Array [],
+        "roleName": "测试",
+        "sort": 3,
+      },
+      Object {
+        "id": 10100,
+        "resources": Array [],
+        "roleName": "演示账号",
+        "sort": 3,
+      },
+    ],
+  },
+}
+`;
+
+exports[`测试组件交互行为是否正常 全部操作执行完成对组件的state进行快照测试 2`] = `
+Object {
+  "defaultExpandedKeys": Array [
+    "123",
+  ],
+  "deptCode": "370202150000",
+}
+`;

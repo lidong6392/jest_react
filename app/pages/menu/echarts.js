@@ -166,6 +166,7 @@ export default class app extends Component {
   render() {
     return (
       <div className="page">
+        <h1>图表</h1>
         <div className="page" ref={c => this.chart = c} />
       </div>
     )
