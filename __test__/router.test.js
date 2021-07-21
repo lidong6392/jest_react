@@ -29,7 +29,6 @@ beforeAll(() => {
 
 describe('测试router', () => {
   test('默认进入概览页面', (done) => {
-    console.log('wrapper.debug() 输出结果：', wrapper.debug())
     expect(wrapper.find('h1').text()).toBe('概览');
     setTimeout(done, 6000)
   });
