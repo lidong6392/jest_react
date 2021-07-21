@@ -59,7 +59,6 @@ describe('检查组件渲染是否正常', () => {
 describe('测试组件交互行为是否正常', () => {
   test('搜索关键词”销售部“', (done) => {
     // 输入搜索关键词”销售部“
-    console.log('wrapper >>', wrapper, wrapper.instance())
     wrapper.find('.page-header Input[placeholder="请输入关键字进行搜索"]').props().onChange('销售部');
     // wrapper.find('.page-header Input[placeholder="请输入关键字进行搜索"]').simulate('change', 
     //   {taget: { value : 'aaa' } }
