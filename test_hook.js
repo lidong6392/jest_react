@@ -1,15 +1,21 @@
 const { exec } = require('child_process');
 
-exec(`cd ${__dirname.replace('/Code', '')} &&  git diff --cached --name-only`, (error, stdout) => {
+exec(`cd ${__dirname} &&  git diff --cached --name-only`, (error, stdout) => {
   if (error === null && stdout) {
-    const fileList = stdout.split('\n').map(item => item.replace('Code', '.'));
+    const fileList = stdout.split('\n');
     const filesPath = fileList.join(' ');
     exec(`npm run test-f ${filesPath}`, (err) => {
       if (err !== null) {
+        console.error(`
+          测试用例执行不通过，请检查！
+          测试用例执行不通过，请检查！
+          测试用例执行不通过，请检查！
+        `);
         throw err;
+      }else{
+        console.info('真厉害！测试用例执行通过！');
       }
     });
   }
 });
 
-console.log('test_hook >>> ');
