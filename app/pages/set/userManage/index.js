@@ -39,7 +39,7 @@ export default class UserManage extends Component {
       moduletype: '',
       currPeopleId: '',
       // hasList: false,
-      searchKey: {
+      condition: {
         keyword: '',
         pageSize: 10,
         pageNo: 1,
@@ -71,8 +71,8 @@ export default class UserManage extends Component {
           {
             userDeptResult: res.data,
             spinloading: false,
-            searchKey: {
-              ...this.state.searchKey,
+            condition: {
+              ...this.state.condition,
               deptCode: res.data.list[0].deptCode,
             },
           },
@@ -90,54 +90,6 @@ export default class UserManage extends Component {
       }
     });
   }
-
-  // 组件已经加载到dom中
-  componentDidMount() {
-    this.props.form.setFieldsValue({ key: '' });
-  }
-
-  // 获取用户列表数据
-  getData(callback) {
-    fetchUserList({ ...this.state.searchKey }, (res) => {
-      this.setState({
-        userListResult: res.data,
-      });
-      callback && callback();
-    });
-  }
-
-  // 删除用户
-  // handleDelete(id) {
-  //   if (sessionStorage.getItem("userid") === id) {
-  //     message.warning("自己不能删除自己");
-  //     return;
-  //   }
-  //   const curUserListResult = this.state.userListResult;
-  //   let curpage = this.state.searchKey.pageNo;
-  //   fetchUserDelete(
-  //     { deptcode: this.state.searchKey.deptCode, id: id },
-  //     res => {
-  //       message.success(res.msg);
-  //       if (
-  //         curUserListResult.totalPage > 1 &&
-  //         curUserListResult.totalCount % 10 === 1
-  //       ) {
-  //         curpage -= 1;
-  //       }
-  //       this.setState(
-  //         {
-  //           searchKey: {
-  //             ...this.state.searchKey,
-  //             pageNo: curpage
-  //           }
-  //         },
-  //         () => {
-  //           this.getData();
-  //         }
-  //       );
-  //     }
-  //   );
-  // }
 
   // 冻结、解冻用户
   handleChangeStatus(id, status) {
@@ -160,6 +112,21 @@ export default class UserManage extends Component {
     });
   };
 
+  // 组件已经加载到dom中
+  componentDidMount() {
+    this.props.form.setFieldsValue({ key: '' });
+  }
+
+  // 获取用户列表数据
+  getData(callback) {
+    fetchUserList({ ...this.state.condition }, (res) => {
+      this.setState({
+        userListResult: res.data,
+      });
+      callback && callback();
+    });
+  }
+
   // 点击人员角色
   // handleUserRole(id) {
   //   fetchUserDetail({ id: id }, res => {
@@ -175,12 +142,11 @@ export default class UserManage extends Component {
   handleSearch = (e) => {
     e.preventDefault();
     const keyword = this.props.form.getFieldValue('key');
-    console.log('handleSearch >>>', keyword)
     this.setState(
       {
         spinloading: true,
-        searchKey: {
-          ...this.state.searchKey,
+        condition: {
+          ...this.state.condition,
           keyword: keyword,
           pageNo: 1,
         },
@@ -200,8 +166,8 @@ export default class UserManage extends Component {
         {
           spinloading: true,
           searchtitle: title,
-          searchKey: {
-            ...this.state.searchKey,
+          condition: {
+            ...this.state.condition,
             deptCode: info[0],
             pageNo: 1,
             keyword: '',
@@ -222,7 +188,7 @@ export default class UserManage extends Component {
 
   // 点击新增人员的时候判断部门 deptid  是否存在，有则弹窗新增
   policeAdd() {
-    if (this.state.searchKey.deptCode) {
+    if (this.state.condition.deptCode) {
       this.setState({
         PoliceAddVisible: true,
         moduletype: 'add',
@@ -266,7 +232,7 @@ export default class UserManage extends Component {
   // 新增或编辑用户保存
   handleOk = () => {
     const curUserListResult = this.state.userListResult;
-    let curpage = this.state.searchKey.pageNo;
+    let curpage = this.state.condition.pageNo;
     if (
       this.state.moduletype === 'add' &&
       curUserListResult &&
@@ -278,8 +244,8 @@ export default class UserManage extends Component {
     this.setState(
       {
         PoliceAddVisible: false,
-        searchKey: {
-          ...this.state.searchKey,
+        condition: {
+          ...this.state.condition,
           pageNo: curpage,
         },
       },
@@ -308,14 +274,14 @@ export default class UserManage extends Component {
 
   // 页数改变事件
   pageChange = (newPage) => {
-    this.state.searchKey.pageNo = newPage;
+    this.state.condition.pageNo = newPage;
     this.getData();
   };
 
   // 页大小改变事件
   pageSizeChange = (e, pageSize) => {
-    this.state.searchKey.pageNo = 1;
-    this.state.searchKey.pageSize = pageSize;
+    this.state.condition.pageNo = 1;
+    this.state.condition.pageSize = pageSize;
     this.getData();
   };
 
@@ -415,6 +381,7 @@ export default class UserManage extends Component {
 
     return (
       <div className="page page-scrollfix page-usermanage">
+        <h1>用户管理</h1>
         <Layout>
           <Layout className="page-body">
             <Sider
@@ -426,7 +393,7 @@ export default class UserManage extends Component {
                 <div className="treeside">
                   <TreeList
                     trees={userDeptResult.list}
-                    curDeptCode={this.state.searchKey.deptCode}
+                    curDeptCode={this.state.condition.deptCode}
                     onSelect={this.onSelect}
                   />
                 </div>
@@ -461,8 +428,8 @@ export default class UserManage extends Component {
                   rowKey="id"
                   columns={this.renderColumn()}
                   dataSource={userListResult.list}
-                  currentPage={this.state.searchKey.pageNo}
-                  pageSize={this.state.searchKey.pageSize}
+                  currentPage={this.state.condition.pageNo}
+                  pageSize={this.state.condition.pageSize}
                   loading={userListResult.loading}
                   scroll={{ y: true }}
                   onChange={this.pageChange}
@@ -478,7 +445,6 @@ export default class UserManage extends Component {
                       style={{ marginRight: '10px' }}
                       onClick={() => this.policeAdd()}
                     >
-                      {' '}
                       新增人员
                     </Button>
                   ) : null}
@@ -488,7 +454,6 @@ export default class UserManage extends Component {
                       loading={this.state.synchronizeLoading}
                       onClick={() => this.synchronize()}
                     >
-                      {' '}
                       同步人员
                     </Button>
                   ) : null}
@@ -505,7 +470,7 @@ export default class UserManage extends Component {
             title={this.state.moduletitle}
             handleOk={this.handleOk}
             values={thevalue}
-            deptId={this.state.searchKey.deptCode}
+            deptId={this.state.condition.deptCode}
             currPeopleId={this.state.currPeopleId}
             type={this.state.moduletype}
             onCancel={this.handleCancel}
