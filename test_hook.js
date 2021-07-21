@@ -12,8 +12,6 @@ exec(`cd ${__dirname} &&  git diff --cached --name-only`, (error, stdout) => {
           测试用例执行不通过，请检查！
         `);
         throw err;
-      }else{
-        console.info('真厉害！测试用例执行通过！');
       }
     });
   }
