@@ -28,7 +28,7 @@ describe('检查组件渲染是否正常', () => {
     const tree = wrapper.find('.page-body Sider TreeList');
     // const { props } = tree.instance();
     const props = tree.props();
-    expect(wrapper.find('.page-body Sider .page-title').text()).toBe('杭州市');
+    expect(wrapper.find('.page-body Sider .page-title').text()).toBe('杭州市2');
     expect(tree.length).toBe(1);
     expect(props.trees.length).toBe(1);
     expect(props.trees[0]).toMatchObject({ id: '1', deptName: '杭州市', deptCode: '370200000000' });
