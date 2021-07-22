@@ -54,27 +54,6 @@ npm run testing (测试环境的打包部署命令，可以根据具体需求自
 这些参数都可以根据实际情况进行调整，报错或者成功的提示信息放在msg里面返回。
 当前项目集成了完整的用户管理、角色管理、模块管理等基本的权限管理功能，小伙伴们一定要同时启动npm run mock才可以看到噢
 
-## 说明
-
->  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
-
-### 大部分人项目启动不起来的原因，绝大部分的情况都是npm依赖包安装的时候有些依赖包没有下载完全，当前的demo肯定是可以跑起来的
-
-### 取消http请求示例：
-```
-import axios from 'axios'
-const axiosHandle = axios.CancelToken.source()
-
-login(){
-  this.props.dispatch(fetchLogin(values, (res) => {},(error)=>{},axiosHandle)
-  取消请求的操作
-  setTimeout(() => {
-    axiosHandle.cancel('手动取消。')
-  }, 3000)
-}
-
-```
-
 
 ## 功能一览
 - [√] 登录，以及登录权限控制
